@@ -29,4 +29,23 @@ function Snake() {
         this.body[0].flag.style.backgroundColor = 'orange';
     };
 
-}
+    this.run = function () {
+        for (let i = this.body.length - 1; i > 0; i--) {
+            this.body[i].x = this.body[i - 1].x;
+            this.body[i].y = this.body[i - 1].y;
+        }
+
+        switch (this.direction) {
+            case 'left':
+                this.body[0].x -= 1;
+                break;
+            case 'right':
+                this.body[0].x += 1;
+                break;
+            case 'up':
+                this.body[0].y -= 1;
+                break;
+            case 'down':
+                this.body[0].y += 1;
+                break;
+        }
