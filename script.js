@@ -128,3 +128,29 @@ const food = new Food();
 // initial display
 snake.display();
 food.display();
+
+document.body.onkeydown = function (e) {
+    const ev = e;
+    switch (ev.key) {
+        case 'ArrowUp':
+            if (snake.direction !== 'down') {
+                snake.direction = 'up';
+            }
+            break;
+        case 'ArrowDown':
+            if (snake.direction !== 'up') {
+                snake.direction = 'down';
+            }
+            break;
+        case 'ArrowLeft':
+            if (snake.direction !== 'right') {
+                snake.direction = 'left';
+            }
+            break;
+        case 'ArrowRight':
+            if (snake.direction !== 'left') {
+                snake.direction = 'right';
+            }
+            break;
+    }
+};
