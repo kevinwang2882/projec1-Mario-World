@@ -154,3 +154,13 @@ document.body.onkeydown = function (e) {
             break;
     }
 };
+const btn = document.getElementById('begin');
+btn.onclick = function () {
+    const parent = this.parentNode;
+    parent.style.display = 'none';
+    let time = SnakeTime;
+
+    timer = setInterval(function () {
+        snake.run();
+    }, time);
+};
