@@ -85,4 +85,33 @@ function Snake() {
                     if (this.body[i].flag != null) {
                         map.removeChild(this.body[i].flag);
                     }
-                }
+                } this.body = [{ x: 2, y: 0 }]; // back to initial
+                this.direction = 'right';
+                this.display(); // display initial
+                return false;
+            }
+        }
+
+        // Delete initial snake, then display the new one
+        for (let i = 0; i < this.body.length; i++) {
+            if (this.body[i].flag != null) {
+                map.removeChild(this.body[i].flag);
+            }
+        }
+        this.display();
+    };
+    this.body = [{ x: 2, y: 0 }]; // back to initial
+    this.direction = 'right';
+    this.display(); // display initial
+    return false;
+}
+
+
+// Delete initial snake, then display the new one
+for (let i = 0; i < this.body.length; i++) {
+if (this.body[i].flag != null) {
+    map.removeChild(this.body[i].flag);
+}
+}
+this.display();
+;
