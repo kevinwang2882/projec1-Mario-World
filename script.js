@@ -28,7 +28,6 @@ function Snake() {
         // set color of snake head as orange
         this.body[0].flag.style.backgroundColor = 'orange';
     };
-
     this.run = function () {
         for (let i = this.body.length - 1; i > 0; i--) {
             this.body[i].x = this.body[i - 1].x;
@@ -67,14 +66,15 @@ function Snake() {
             return false;
         }
 
-         // If snake coordinates match food coordinates
-         if (this.body[0].x === food.x && this.body[0].y === food.y) {
+        // If snake coordinates match food coordinates
+        if (this.body[0].x === food.x && this.body[0].y === food.y) {
             this.body.push({ x: null, y: null, flag: null });
             refresh();
             // Clear food, reappear one
             map.removeChild(food.flag);
             food.display();
         }
+
         // Check if the snake bites itself
         for (let i = 4; i < this.body.length; i++) {
             if (this.body[0].x === this.body[i].x && this.body[0].y === this.body[i].y) {
@@ -85,7 +85,8 @@ function Snake() {
                     if (this.body[i].flag != null) {
                         map.removeChild(this.body[i].flag);
                     }
-                } this.body = [{ x: 2, y: 0 }]; // back to initial
+                }
+                this.body = [{ x: 2, y: 0 }]; // back to initial
                 this.direction = 'right';
                 this.display(); // display initial
                 return false;
@@ -100,18 +101,30 @@ function Snake() {
         }
         this.display();
     };
-    this.body = [{ x: 2, y: 0 }]; // back to initial
-    this.direction = 'right';
-    this.display(); // display initial
-    return false;
 }
 
+// create food
+function Food() {
+    this.width = 20;
+    this.height = 20;
 
-// Delete initial snake, then display the new one
-for (let i = 0; i < this.body.length; i++) {
-if (this.body[i].flag != null) {
-    map.removeChild(this.body[i].flag);
+    this.display = function () {
+        const d = document.createElement('div');
+        this.flag = d;
+        d.style.width = this.width + 'px';
+        d.style.height = this.height + 'px';
+        d.style.background = 'red';
+        d.style.position = 'absolute';
+        this.x = Math.floor(Math.random() * 80);
+        this.y = Math.floor(Math.random() * 40);
+        d.style.left = this.x * this.width + 'px';
+        d.style.top = this.y * this.height + 'px';
+        map.appendChild(d);
+    };
 }
-}
-this.display();
-;
+
+const snake = new Snake();
+const food = new Food();
+// initial display
+snake.display();
+food.display();
