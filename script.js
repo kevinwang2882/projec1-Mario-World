@@ -104,6 +104,20 @@ function Snake() {
             map.removeChild(food.flag);
             food.display();
         }
+        //Check for collision with block
+        for (let i = 0; i < blocks.length; i++) {
+            if (this.body[0].x === blocks[i].x && this.body[0].y === blocks[i].y) {
+                // Stop the game
+                clearInterval(timer);
+                Swal.fire({
+                    title: 'Game Over!',
+                    text: ' Game Over! Bowser catched you!',
+                    imageUrl: 'https://static.wikia.nocookie.net/5604a6b5-8e7e-4d9b-b503-86d3fd2c1162/scale-to-width/755', // Replace with the actual path to your image
+                    imageWidth: 200,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    confirmButtonText: 'OK'
+                });
 
         // Check if the snake bites itself
         for (let i = 4; i < this.body.length; i++) {
