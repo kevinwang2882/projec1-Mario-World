@@ -1,6 +1,12 @@
+// Global variables
 const map = document.getElementById('map');
 const SnakeTime = 200;
+let score= 0;
+let foodEatenCount = 0;
 let timer;
+const blocks = [];
+let bestScore = localStorage.getItem('Bestscore') || 0;
+document.getElementById('Bestscore').innerText = 'Best Score: ' + bestScore;
 
 // create snake
 function Snake() {
@@ -9,6 +15,21 @@ function Snake() {
     this.height = 20;
     this.direction = 'right';
     this.body = [{ x: 2, y: 0, flag: null }];
+    this.bodyImage = getRandomBodyImage();
+
+    function getRandomBodyImage() {
+        const bodyImages = [
+            "url('image/banana.png')",
+            "url('image/bullet.png')",
+            "url('image/ghost.png')",
+            "url('image/mashroom.png')",
+            "url('image/star.png')",
+            "url('https://mario.wiki.gallery/images/thumb/1/10/SpinyShellMK8.png/1200px-SpinyShellMK8.png')",
+        ];
+        const randomIndex = Math.floor(Math.random() * bodyImages.length);
+        return bodyImages[randomIndex];
+    }
+
 
     // display snake
     this.display = function () {
@@ -164,3 +185,10 @@ btn.onclick = function () {
         snake.run();
     }, time);
 };
+function refresh() {
+    clearInterval(timer);
+    timer = setInterval(function () {
+        snake.run();
+        console.log(SnakeTime);
+    }, SnakeTime);
+}
