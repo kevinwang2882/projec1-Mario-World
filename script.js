@@ -216,44 +216,74 @@ snake.display();
 food.display();
 
 document.body.onkeydown = function (e) {
-    const ev = e;
+    // have event, use event
+    const ev = e 
     switch (ev.key) {
         case 'ArrowUp':
-            if (snake.direction !== 'down') {
-                snake.direction = 'up';
+            // not allow go back
+            if (mario.direction != 'down') {
+                mario.direction = 'up';
             }
             break;
         case 'ArrowDown':
-            if (snake.direction !== 'up') {
-                snake.direction = 'down';
+            if (mario.direction != 'up') {
+                mario.direction = 'down';
             }
             break;
         case 'ArrowLeft':
-            if (snake.direction !== 'right') {
-                snake.direction = 'left';
+            if (mario.direction != 'right') {
+                mario.direction = 'left';
             }
             break;
         case 'ArrowRight':
-            if (snake.direction !== 'left') {
-                snake.direction = 'right';
+            if (mario.direction != 'left') {
+                mario.direction = 'right';
+            }
+            break;
+        // also wasd keywords
+        case 'w':
+            if (mario.direction != 'down') {
+                mario.direction = 'up';
+            }
+            break;
+        case 's':
+            if (mario.direction != 'up') {
+                mario.direction = 'down';
+            }
+            break;
+        case 'a':
+            if (mario.direction != 'right') {
+                mario.direction = 'left';
+            }
+            break;
+        case 'd':
+            if (mario.direction != 'left') {
+                mario.direction = 'right';
             }
             break;
     }
 };
+}
 const btn = document.getElementById('begin');
+// click to start
 btn.onclick = function () {
     const parent = this.parentNode;
+    // hide start btn
     parent.style.display = 'none';
-    let time = SnakeTime;
+    // get timer
+    let time = marioTime;
 
     timer = setInterval(function () {
-        snake.run();
+        mario.run();
     }, time);
 };
+// refresh timer function
 function refresh() {
+    // stop timer
     clearInterval(timer);
+    // reflash time
     timer = setInterval(function () {
-        snake.run();
-        console.log(SnakeTime);
-    }, SnakeTime);
+        mario.run();
+        console.log(marioTime);
+    }, marioTime);
 }

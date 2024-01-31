@@ -39,6 +39,9 @@ body {
 }
 h1 {
     text-align: center;
+    font-family: 'Honk', system-ui;
+    font-size: 72px; 
+    margin-top: 10px;
 }
 
 /* Start Button Styles */
@@ -68,7 +71,7 @@ h1 {
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
 }
 
 #score {
@@ -93,4 +96,26 @@ h1 {
     left:  20px; 
     width: 100px; 
     height: 100px; 
+}
+.music {
+    position: absolute;
+    top: 0;
+    left: 8%;
+    transform: translateX(-50%);
+}
+#cloudsImage {
+    position: absolute;
+    top: 50%;
+    right: -220px;
+    transform: translate(0, -50%);
+    width: 200px;
+    height: 200px;
+}
+#cloudsImage2 {
+    position: absolute;
+    top: 50%;
+    left: -220px;
+    transform: translate(0, -50%);
+    width: 200px;
+    height: 200px;
 }
