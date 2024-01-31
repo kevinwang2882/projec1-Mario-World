@@ -173,6 +173,11 @@ function GenerateRandomBlock() {
     map.appendChild(blockElement);
     blocks.push({ x: this.x, y: this.y, flag: blockElement });
 }
+function isBlockOnBoxAndMario(x, y) {
+    return isBlockOnMario(x, y) && isBlockOnBox(x, y);
+}
+
+};
 function isBlockOnMario(x, y) {
     for (let i = 0; i < mario.body.length; i++) {
         if (mario.body[i].x === x && mario.body[i].y === y) {
@@ -188,6 +193,7 @@ function isBlockOnBox(x, y) {
     }
     return false;
 }      
+}   
 }
 // create food
 function Food() {
@@ -199,21 +205,36 @@ function Food() {
         this.flag = d;
         d.style.width = this.width + 'px';
         d.style.height = this.height + 'px';
-        d.style.background = 'red';
-        d.style.position = 'absolute';
-        this.x = Math.floor(Math.random() * 80);
-        this.y = Math.floor(Math.random() * 40);
+               // Set background image
+               boxElement.style.backgroundImage = "url('https://cdna.artstation.com/p/assets/images/images/061/938/632/original/derend-marvel-ezgif-com-gif-maker-1.gif?1681968838')";
+               boxElement.style.backgroundSize = 'cover';
+               boxElement.style.position = 'absolute';
+       
+        do {
+            this.x = Math.floor(Math.random() * 35);
+            this.y = Math.floor(Math.random() * 15);
+        } while (isBoxOnMario(this.x, this.y));
+
         d.style.left = this.x * this.width + 'px';
         d.style.top = this.y * this.height + 'px';
         map.appendChild(d);
     };
+} function isBoxOnMario(x, y) {
+    for (let i = 0; i < mario.body.length; i++) {
+        if (mario.body[i].x === x && mario.body[i].y === y) {
+            return true;
+        }
+    }
+    return false;
+}
 }
 
-const snake = new Snake();
-const food = new Food();
+const mario = new Mario();
+const box = new Box();
+const block = new GenerateRandomBlock();
 // initial display
-snake.display();
-food.display();
+mario.display();
+box.display();
 
 document.body.onkeydown = function (e) {
     // have event, use event
