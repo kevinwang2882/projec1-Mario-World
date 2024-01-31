@@ -159,6 +159,22 @@ function GenerateRandomBlock() {
     map.appendChild(blockElement);
     blocks.push({ x: this.x, y: this.y, flag: blockElement });
 }
+function isBlockOnMario(x, y) {
+    for (let i = 0; i < mario.body.length; i++) {
+        if (mario.body[i].x === x && mario.body[i].y === y) {
+            return true;
+        }
+    }
+    return false;
+}
+function isBlockOnBox(x, y) {
+    for (let i = 0; i < blocks.length; i++) {
+    if (box.x === x && box.y === y) {
+        return true;
+    }
+    return false;
+}      
+}
 // create food
 function Food() {
     this.width = 20;
