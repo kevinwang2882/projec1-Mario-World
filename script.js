@@ -132,7 +132,33 @@ function Snake() {
         this.display();
     };
 }
+function GenerateRandomBlock() {
+    this.width = 40;
+    this.height = 40;
 
+    this.display = function () {
+        // create one div
+        const blockElement = document.createElement('div');
+        this.flag = blockElement;
+        blockElement.style.width = this.width + 'px';
+        blockElement.style.height = this.height + 'px';
+    // Set background image for the random block
+    blockElement.style.backgroundImage = "url('https://i.makeagif.com/media/6-20-2016/RZDH7S.gif')";
+    blockElement.style.backgroundSize = 'cover';
+    blockElement.style.position = 'absolute';
+
+    // Generate random coordinates for the block
+    do {
+        this.x = Math.floor(Math.random() * 35);
+        this.y = Math.floor(Math.random() * 15);
+    } while (isBlockOnMario(this.x, this.y)||isBlockOnBox(this.x, this.y));
+
+    console.log("Random block coordinates:", this.x, this.y);
+    blockElement.style.left = this.x * this.width + 'px';
+    blockElement.style.top = this.y * this.height + 'px';
+    map.appendChild(blockElement);
+    blocks.push({ x: this.x, y: this.y, flag: blockElement });
+}
 // create food
 function Food() {
     this.width = 20;
