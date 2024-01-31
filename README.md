@@ -3,7 +3,9 @@
 
 Mario Warld is a casual puzzle game that is both simple and playable. The game controls the direction of the Mario to eat misa box, making him getting more items.
 
-![image](WX20240126-101312.png)
+![image](image/WX20240131-135026.png)
+
+# Game Start
 
 # Game Start
 
@@ -36,6 +38,9 @@ Mario Warld is a casual puzzle game that is both simple and playable. The game c
 * As a player, I should be able to restart the game
 * As a player, I should be able to losing massage
 
+# Source 
+* Google Font:Honk
+* music: Ground Theme
 
 # Stretch goals
 * Implement different levels with increasing difficulty.
