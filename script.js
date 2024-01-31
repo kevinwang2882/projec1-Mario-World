@@ -71,9 +71,18 @@ function Snake() {
         }
 
         // Check if it's out of bounds
-        if (this.body[0].x < 0 || this.body[0].x > 150 || this.body[0].y < 0 || this.body[0].y > 60) {
+        if(this.body[0].x<0 || this.body[0].x >139/4 || this.body[0].y<0 || this.body[0].y>59/4 ){
             clearInterval(timer);
-            alert("Hit boundary, game over!");
+             //clear timer
+             Swal.fire({
+                title: 'Game Over!',
+                text: ' You hit the boundry!',
+                imageUrl: 'https://www.icegif.com/wp-content/uploads/2023/04/icegif-584.gif', // Replace with the actual path to your image
+                imageWidth: 200,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                confirmButtonText: 'OK'
+            });
             document.getElementById('beginBox').style.display = 'block';
             // Delete old ones
             for (let i = 0; i < this.body.length; i++) {
