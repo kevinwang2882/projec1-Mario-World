@@ -1,6 +1,6 @@
 // Global variables
 const map = document.getElementById('map');
-const marioTime = 200;
+const marioTime = 250;
 let score= 0;
 let boxEatenCount = 0;
 let timer;
@@ -240,7 +240,7 @@ function Mario() {
                 this.y = Math.floor(Math.random() * 15);
             } while (isBlockOnMario(this.x, this.y)||isBlockOnBox(this.x, this.y));
         
-            console.log("Random block coordinates:", this.x, this.y);
+            //console.log("Random block coordinates:", this.x, this.y);
             blockElement.style.left = this.x * this.width + 'px';
             blockElement.style.top = this.y * this.height + 'px';
             map.appendChild(blockElement);
@@ -292,7 +292,7 @@ function Box() {
             this.y = Math.floor(Math.random() * 15);
         } while (isBoxOnMario(this.x, this.y));
 
-        console.log("Box coordinates:", this.x, this.y);
+        //console.log("Box coordinates:", this.x, this.y);
         boxElement.style.left = this.x * this.width + 'px';
         boxElement.style.top = this.y * this.height + 'px';
         map.appendChild(boxElement);
@@ -308,7 +308,7 @@ function Box() {
         return false;
     }
 }
-
+// Create instances
 const mario = new Mario();
 const box = new Box();
 const block = new GenerateRandomBlock();
@@ -385,6 +385,6 @@ function refresh() {
     // reflash time
     timer = setInterval(function () {
         mario.run();
-        console.log(marioTime);
+        //console.log(marioTime);
     }, marioTime);
 }
