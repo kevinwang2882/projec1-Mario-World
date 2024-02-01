@@ -17,6 +17,7 @@ function Mario() {
     this.body = [{ x: 1, y: 0, flag: null }];
     this.bodyImage = getRandomBodyImage();
 
+    //random image
     function getRandomBodyImage() {
         const bodyImages = [
             "url('image/banana.png')",
@@ -79,7 +80,7 @@ function Mario() {
         if(this.body[0].x<0 || this.body[0].x >139/4 || this.body[0].y<0 || this.body[0].y>59/4 ){
             clearInterval(timer);
              //clear timer
-             Swal.fire({
+            Swal.fire({
                 title: 'Game Over!',
                 text: ' You hit the boundry!',
                 imageUrl: 'https://www.icegif.com/wp-content/uploads/2023/04/icegif-584.gif', // Replace with the actual path to your image
