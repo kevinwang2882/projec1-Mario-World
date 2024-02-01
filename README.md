@@ -5,6 +5,7 @@ Mario Warld is a casual snake game  The game controls the direction of the Mario
 
 # Game Start
 ![Image Alt Text](./startgame.png)
+# Game Over
 ![Image Alt Text](./hitself.png)
 ![Image Alt Text](./bowser.png)
 ![Image Alt Text](./boundary.png)
