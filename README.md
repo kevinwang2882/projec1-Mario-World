@@ -6,7 +6,7 @@ Mario Warld is a casual snake game  The game controls the direction of the Mario
 # Game Start
 ![Image Alt Text](./startgame.png)
 # Game Over
-### collides with the itself
+### collides with its items
 ![Image Alt Text](./hitself.png)
 ### collides with bowser
 ![Image Alt Text](./bowser.png)
@@ -17,7 +17,7 @@ Mario Warld is a casual snake game  The game controls the direction of the Mario
 * Click the "Begin" button to start the game.
 * Control the Mario using the arrow keys (Up, Down, Left, Right) or the W, A, S, D keys.
 * Move the Mario towards the Mystic box on the map to collect item.
-* Avoid collisions with the game boundaries, yourself, and the randomly generated enemy blocks (Bowser).
+* Avoid collisions with the game boundaries, its items, and the randomly generated enemy blocks (Bowser).
 * The game ends if the Mario collides with the boundaries, itself, or an enemy block.
 * After the game over, the start box will reappear, and you can click "Begin" to start a new game.
 
