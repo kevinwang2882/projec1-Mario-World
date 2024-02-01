@@ -1,13 +1,13 @@
 #  Welcome to Mario World
 ## About this game
 
-Mario Warld is a casual puzzle game that is both simple and playable. The game controls the direction of the Mario to eat misa box, making him getting more items.
+Mario Warld is a casual snake game  The game controls the direction of the Mario to collect mystery box, let him getting more items,while avoiding collisions with the game's boundaries ,the Mario's own item and enermy(bowser).
 
 # Game Start
 ![Image Alt Text](./startgame.png)
 ![Image Alt Text](./hitself.png)
 ![Image Alt Text](./bowser.png)
-![Image Alt Text](./hitself.png)
+![Image Alt Text](./boundary.png)
 
 # How to Play
 * Click the "Begin" button to start the game.
@@ -24,9 +24,9 @@ Mario Warld is a casual puzzle game that is both simple and playable. The game c
 
 # Main features
 * Has audio music on background 
-* The snake body has different Mario-items images.
-* A block (Bowser) appears on the map after every 3 foods are eaten.
-* Your best score will be displayed on the screen.
+* The Mario behind has different Mario-items images.
+* A block (Bowser) appears on the map when box are collected each time.
+* Best score will be displayed on the screen.
 
 # Player Stories
 * As a player, I should be able to to control the Mario with arrow keys
@@ -34,7 +34,7 @@ Mario Warld is a casual puzzle game that is both simple and playable. The game c
 * As a player, I should be able to make team to have different Mario-item images
 * As a player, I should be able to track and display my highest score 
 * As a player, I should be able to restart the game
-* As a player, I should be able to losing massage
+* As a player, I should be able to see losing massage
 
 # Source 
 * Google Font:Honk
