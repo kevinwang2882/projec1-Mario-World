@@ -291,7 +291,7 @@ function Box() {
         do {
             this.x = Math.floor(Math.random() * 35);
             this.y = Math.floor(Math.random() * 15);
-        } while (isBoxOnMario(this.x, this.y));
+        } while (isBoxOnMario(this.x, this.y)&&isBoxOnblock(this.x, this.y));
 
         //console.log("Box coordinates:", this.x, this.y);
         boxElement.style.left = this.x * this.width + 'px';
@@ -303,6 +303,14 @@ function Box() {
     function isBoxOnMario(x, y) {
         for (let i = 0; i < mario.body.length; i++) {
             if (mario.body[i].x === x && mario.body[i].y === y) {
+                return true;
+            }
+        }
+        return false;
+    }
+    function isBoxOnBlock(x, y) {
+        for (let i = 0; i < blocks.length; i++) {
+            if (box.x === x && box.y === y) {
                 return true;
             }
         }
