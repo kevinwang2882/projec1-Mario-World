@@ -3,8 +3,10 @@
 
 Mario Warld is a casual snake game  The game controls the direction of the Mario to collect mystery box, let him getting more items,while avoiding collisions with the game's boundaries ,the Mario's own item and enermy(bowser).
 
+##Deployed Link:
+[Click here to play game](https://mario-world.surge.sh)
+
 # Game Start
-[Click here to play game](mario-world.surge.sh)
 ![Image Alt Text](./startgame.png)
 # Game Over
 ### collides with its items
